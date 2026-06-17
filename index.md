@@ -1,5 +1,5 @@
 
-# 👋 Hi, I'm Cristina  
+#  Hi, I'm Cristina  
   
 I’m someone who learns fast, adapts quickly, and genuinely enjoys solving real problems, whether they’re technical, or somewhere in between.  
 My background blends data analytics, digital marketing, AWS cloud fundamentals, and several years of hands‑on customer experience, giving me a mix of technical skill and real‑world understanding that I bring into every project.  
@@ -10,7 +10,7 @@ Welcome to my portfolio.
 
 ---
 
-## 🌱 About Me  
+##  About Me  
 
 I’m a mix of data analytics, digital marketing, AWS cloud fundamentals, and years of real customer experience.  
 I’ve always been someone who learns by doing, asks questions, and looks for the simple truth inside complicated things.  
@@ -25,7 +25,7 @@ I like turning messy information into something useful, I’m not afraid to star
 
 ---
 
-## 📊 Projects  
+##  Projects  
 
 ### **1. Customer Churn Prediction (Machine Learning)**  
 A full ML workflow using Python, feature engineering, model comparison, ROC curves, and interpretability tools like LIME and permutation importance.  
