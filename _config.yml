@@ -2,14 +2,3 @@ theme: minima
 
 title: Cristina’s Portfolio
 description: Data • Marketing • Cloud • Customer Experience
-
-# Navigation bar
-nav:
-  - name: Home
-    link: /
-  - name: About
-    link: /about
-  - name: Projects
-    link: /projects
-  - name: Contact
-    link: /contact
