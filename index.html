@@ -1,704 +1,978 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cristina Stefanache | Data, Marketing & Cloud Portfolio</title>
-  <meta name="description" content="Portfolio of Cristina Stefanache, Dublin-based professional in data analytics, digital marketing, cloud fundamentals and business insights.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristina Stefanache — Data Analytics, Digital Marketing & Cloud</title>
+<meta name="description" content="Portfolio of Cristina Stefanache, based in Dublin. Data analytics, digital marketing, cloud fundamentals, and business insight.">
 
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --light: #e2e8f0;
-      --blue: #2563eb;
-      --teal: #14b8a6;
-      --purple: #8b5cf6;
-      --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
-      --radius: 22px;
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #E7E4D9;
+    --surface: #F4F1EA;
+    --surface-soft: #DDD8CA;
+    --border: #C9C1B0;
+    --border-soft: #D8D1C2;
+
+    --text: #1F2F2B;
+    --text-muted: #3F5F55;
+    --text-faint: #72827A;
+
+    --primary: #3F5F55;
+    --primary-bright: #1F2F2B;
+    --highlight: #C07A4B;
+
+    --analytics: #2563EB;
+    --marketing: #8B5CF6;
+    --cloud: #14B8A6;
+    --web: #C07A4B;
+
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+    --max: 1120px;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  ::selection{ background:var(--highlight); color:white; }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .eyebrow{
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--text-muted);
+  }
+
+  .nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    padding:22px 0;
+    transition:background 0.4s ease, border-color 0.4s ease, padding 0.4s ease;
+    border-bottom:1px solid transparent;
+  }
+
+  .nav.scrolled{
+    background:rgba(231,228,217,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom-color:var(--border);
+    padding:14px 0;
+  }
+
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .monogram{
+    width:36px;
+    height:36px;
+    border:1px solid var(--primary);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--serif);
+    font-size:16px;
+    letter-spacing:0.04em;
+    color:var(--primary-bright);
+    background:rgba(255,255,255,0.35);
+    flex-shrink:0;
+  }
+
+  .nav-links{
+    display:flex;
+    gap:34px;
+    list-style:none;
+  }
+
+  .nav-links a{
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    position:relative;
+    padding-bottom:4px;
+    transition:color 0.25s ease;
+  }
+
+  .nav-links a:hover{ color:var(--text); }
+
+  .nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0;
+    height:1px;
+    background:var(--highlight);
+    transition:width 0.25s ease;
+  }
+
+  .nav-links a:hover::after{ width:100%; }
+
+  .nav-cta{
+    border:1px solid var(--highlight);
+    color:var(--highlight) !important;
+    padding:9px 18px;
+    font-size:11px;
+  }
+
+  .nav-cta::after{ display:none; }
+
+  .nav-cta:hover{
+    background:var(--highlight);
+    color:white !important;
+  }
+
+  @media (max-width:760px){
+    .nav-links{ display:none; }
+  }
+
+  .hero{
+    padding:180px 0 0;
+    text-align:center;
+    position:relative;
+  }
+
+  .hero-eyebrow{
+    margin-bottom:22px;
+  }
+
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(48px, 7vw, 84px);
+    line-height:1.05;
+    letter-spacing:0.01em;
+    color:var(--text);
+    opacity:0;
+    transform:translateY(14px);
+    animation:rise 0.9s ease 0.15s forwards;
+  }
+
+  .hero-roles{
+    margin-top:20px;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    opacity:0;
+    animation:rise 0.9s ease 0.35s forwards;
+  }
+
+  .hero-roles span{
+    color:var(--text-faint);
+    margin:0 10px;
+  }
+
+  .hero-statement{
+    max-width:650px;
+    margin:30px auto 0;
+    font-size:17px;
+    color:var(--text-muted);
+    opacity:0;
+    animation:rise 0.9s ease 0.5s forwards;
+  }
+
+  .profile-photo{
+    width:132px;
+    height:132px;
+    margin:36px auto 0;
+    border-radius:50%;
+    padding:5px;
+    background:linear-gradient(135deg, var(--primary), var(--highlight));
+    opacity:0;
+    animation:rise 0.9s ease 0.65s forwards;
+  }
+
+  .profile-photo img{
+    width:100%;
+    height:100%;
+    display:block;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid var(--bg);
+  }
+
+  @keyframes rise{
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  .hero-trace{
+    margin:58px auto 0;
+    max-width:680px;
+    display:block;
+  }
+
+  .hero-trace path{
+    fill:none;
+    stroke:var(--highlight);
+    stroke-width:1.4;
+    stroke-dasharray:600;
+    stroke-dashoffset:600;
+    animation:draw 1.8s ease 0.9s forwards;
+  }
+
+  .hero-trace circle{
+    fill:var(--bg);
+    stroke:var(--primary);
+    stroke-width:1.4;
+    opacity:0;
+    animation:dotfade 0.5s ease forwards;
+  }
+
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @keyframes dotfade{ to{ opacity:1; } }
+
+  .ticker{
+    border-top:1px solid var(--border-soft);
+    border-bottom:1px solid var(--border-soft);
+    margin-top:50px;
+  }
+
+  .ticker-row{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+  }
+
+  .ticker-item{
+    text-align:center;
+    padding:34px 16px;
+    border-left:1px solid var(--border-soft);
+  }
+
+  .ticker-item:first-child{ border-left:none; }
+
+  .ticker-num{
+    font-family:var(--mono);
+    font-size:clamp(22px, 3vw, 30px);
+    color:var(--primary-bright);
+  }
+
+  .ticker-label{
+    margin-top:8px;
+    font-size:10.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--text-muted);
+  }
+
+  @media (max-width:760px){
+    .ticker-row{ grid-template-columns:repeat(2, 1fr); }
+    .ticker-item:nth-child(3){ border-left:none; }
+  }
+
+  section{ padding:115px 0; }
+
+  .section-head{
+    text-align:center;
+    margin-bottom:64px;
+  }
+
+  .section-head .eyebrow{
+    display:block;
+    margin-bottom:14px;
+  }
+
+  .section-head h2{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(30px, 4vw, 42px);
+  }
+
+  .filters{
+    display:flex;
+    justify-content:center;
+    gap:0;
+    position:relative;
+    margin-bottom:60px;
+    border-bottom:1px solid var(--border-soft);
+    flex-wrap:wrap;
+  }
+
+  .filter-btn{
+    background:none;
+    border:none;
+    font-family:var(--sans);
+    font-size:11.5px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    padding:14px 22px;
+    cursor:pointer;
+    transition:color 0.25s ease;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active{
+    color:var(--text);
+  }
+
+  .filter-underline{
+    position:absolute;
+    bottom:-1px;
+    left:0;
+    height:1.5px;
+    background:var(--highlight);
+    transition:left 0.35s ease, width 0.35s ease, background 0.35s ease;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    background:var(--border-soft);
+    border:1px solid var(--border-soft);
+  }
+
+  @media (max-width:760px){
+    .grid{ grid-template-columns:1fr; }
+  }
+
+  .card{
+    background:var(--surface);
+    padding:44px 40px;
+    transition:background 0.3s ease, opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  .card:hover{
+    background:#fffaf2;
+  }
+
+  .card.hide{
+    display:none;
+  }
+
+  .card-tag{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:20px;
+  }
+
+  .card-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    flex-shrink:0;
+  }
+
+  .card-cat{
+    font-size:10.5px;
+    font-weight:600;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+  }
+
+  .card h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:27px;
+    margin-bottom:12px;
+  }
+
+  .card p{
+    font-size:14.5px;
+    color:var(--text-muted);
+    margin-bottom:18px;
+  }
+
+  .card-result{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--highlight);
+    margin-bottom:18px;
+  }
+
+  .card-tools{
+    font-size:12px;
+    color:var(--text-faint);
+    margin-bottom:22px;
+    letter-spacing:0.02em;
+  }
+
+  .card-links{
+    display:flex;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+
+  .card-links a{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.04em;
+    border-bottom:1px solid var(--border);
+    padding-bottom:3px;
+    transition:border-color 0.25s ease, color 0.25s ease;
+  }
+
+  .card-links a:hover{
+    color:var(--highlight);
+    border-color:var(--highlight);
+  }
+
+  .about{
+    background:var(--surface);
+    border-top:1px solid var(--border-soft);
+    border-bottom:1px solid var(--border-soft);
+  }
+
+  .about-inner{
+    max-width:760px;
+    margin:0 auto;
+    text-align:center;
+  }
+
+  .about blockquote{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:clamp(23px, 3vw, 31px);
+    line-height:1.45;
+    color:var(--text);
+  }
+
+  .about-bio{
+    margin-top:28px;
+    font-size:15.5px;
+    color:var(--text-muted);
+  }
+
+  .tools-table{
+    max-width:840px;
+    margin:0 auto;
+    border-top:1px solid var(--border-soft);
+  }
+
+  .tools-row{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:24px;
+    padding:22px 0;
+    border-bottom:1px solid var(--border-soft);
+  }
+
+  .tools-row div:last-child{
+    font-size:14.5px;
+    color:var(--text-muted);
+  }
+
+  @media (max-width:600px){
+    .tools-row{
+      grid-template-columns:1fr;
+      gap:6px;
     }
+  }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  .experience-grid{
+    max-width:900px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--border-soft);
+    border:1px solid var(--border-soft);
+  }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
+  .experience-card{
+    background:var(--surface);
+    padding:38px;
+  }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+  .experience-card h3{
+    font-family:var(--serif);
+    font-size:25px;
+    font-weight:500;
+    margin-bottom:8px;
+  }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
+  .experience-date{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--highlight);
+    margin-bottom:16px;
+  }
 
-    header {
-      padding: 28px 0;
-      position: sticky;
-      top: 0;
-      background: rgba(248, 250, 252, 0.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--light);
-      z-index: 10;
-    }
+  .experience-card p,
+  .experience-card li{
+    color:var(--text-muted);
+    font-size:14.5px;
+  }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .experience-card ul{
+    margin:16px 0 0 18px;
+  }
 
-    .logo {
-      font-weight: 700;
-      color: var(--blue);
-      letter-spacing: -0.03em;
-    }
+  @media (max-width:760px){
+    .experience-grid{ grid-template-columns:1fr; }
+  }
 
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      font-size: 14px;
-      color: var(--muted);
-    }
+  .contact{
+    text-align:center;
+  }
 
-    .nav-links a:hover {
-      color: var(--blue);
-    }
+  .contact h2{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(30px, 4vw, 42px);
+    margin-bottom:18px;
+  }
 
-    .hero {
-      padding: 90px 0 70px;
-    }
+  .contact p{
+    color:var(--text-muted);
+    margin-bottom:36px;
+  }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
-      gap: 60px;
-      align-items: center;
-    }
+  .contact-links{
+    display:flex;
+    justify-content:center;
+    gap:36px;
+    flex-wrap:wrap;
+  }
 
-    .tag {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #dbeafe;
-      color: var(--blue);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 22px;
-    }
+  .contact-links a{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    border-bottom:1px solid var(--border);
+    padding-bottom:5px;
+    transition:border-color 0.25s ease, color 0.25s ease;
+  }
 
-    h1 {
-      font-size: clamp(42px, 7vw, 72px);
-      line-height: 1;
-      letter-spacing: -0.06em;
-      margin-bottom: 24px;
-    }
+  .contact-links a:hover{
+    color:var(--highlight);
+    border-color:var(--highlight);
+  }
 
-    .hero p {
-      font-size: 19px;
-      color: var(--muted);
-      max-width: 650px;
-      margin-bottom: 32px;
-    }
+  footer{
+    padding:50px 0;
+    text-align:center;
+    border-top:1px solid var(--border-soft);
+  }
 
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+  footer .monogram{
+    margin:0 auto 16px;
+  }
 
-    .btn {
-      padding: 13px 20px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 14px;
-      border: 1px solid var(--light);
-      background: var(--card);
-    }
+  footer p{
+    font-size:11px;
+    color:var(--text-faint);
+    letter-spacing:0.05em;
+  }
+</style>
 
-    .btn-primary {
-      background: var(--blue);
-      color: white;
-      border-color: var(--blue);
-    }
-
-    .photo-card {
-      background: linear-gradient(135deg, #dbeafe, #f3e8ff);
-      padding: 14px;
-      border-radius: 32px;
-      box-shadow: var(--shadow);
-    }
-
-    .photo-card img {
-      width: 100%;
-      display: block;
-      border-radius: 24px;
-      object-fit: cover;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 50px;
-    }
-
-    .stat {
-      background: var(--card);
-      padding: 24px;
-      border-radius: var(--radius);
-      border: 1px solid var(--light);
-      box-shadow: var(--shadow);
-    }
-
-    .stat strong {
-      font-size: 28px;
-      color: var(--blue);
-    }
-
-    .stat span {
-      display: block;
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 6px;
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      max-width: 720px;
-      margin-bottom: 38px;
-    }
-
-    .section-title span {
-      color: var(--blue);
-      font-weight: 700;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    h2 {
-      font-size: clamp(32px, 4vw, 46px);
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-      margin-top: 10px;
-    }
-
-    .section-title p {
-      color: var(--muted);
-      margin-top: 16px;
-      font-size: 17px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 26px;
-    }
-
-    .panel {
-      background: var(--card);
-      padding: 34px;
-      border-radius: var(--radius);
-      border: 1px solid var(--light);
-      box-shadow: var(--shadow);
-    }
-
-    .panel p {
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .edu-item {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--light);
-    }
-
-    .edu-item:last-child {
-      border-bottom: none;
-    }
-
-    .edu-item strong {
-      display: block;
-      color: var(--text);
-    }
-
-    .edu-item span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .project {
-      background: var(--card);
-      border: 1px solid var(--light);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12);
-    }
-
-    .project-type {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 999px;
-      margin-bottom: 18px;
-    }
-
-    .ml { background: #ede9fe; color: var(--purple); }
-    .web { background: #ccfbf1; color: #0f766e; }
-    .marketing { background: #dbeafe; color: var(--blue); }
-
-    .project h3 {
-      font-size: 24px;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-    }
-
-    .project p, .project li {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .project ul {
-      margin: 16px 0 18px 18px;
-    }
-
-    .tools {
-      font-size: 13px;
-      color: var(--muted);
-      border-top: 1px solid var(--light);
-      padding-top: 16px;
-      margin-top: 18px;
-    }
-
-    .project a {
-      display: inline-block;
-      margin-top: 18px;
-      font-weight: 700;
-      color: var(--blue);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .skill-card {
-      background: var(--card);
-      border: 1px solid var(--light);
-      border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: var(--shadow);
-    }
-
-    .skill-card h3 {
-      margin-bottom: 14px;
-      font-size: 20px;
-    }
-
-    .skill-card ul {
-      list-style: none;
-    }
-
-    .skill-card li {
-      color: var(--muted);
-      margin-bottom: 8px;
-      font-size: 15px;
-    }
-
-    .experience {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .experience-card {
-      background: var(--card);
-      border: 1px solid var(--light);
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: var(--shadow);
-    }
-
-    .date {
-      color: var(--blue);
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-
-    .experience-card p, .experience-card li {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .experience-card ul {
-      margin: 16px 0 0 18px;
-    }
-
-    .contact-box {
-      background: linear-gradient(135deg, var(--blue), var(--purple));
-      color: white;
-      padding: 48px;
-      border-radius: 30px;
-      box-shadow: var(--shadow);
-    }
-
-    .contact-box p {
-      max-width: 720px;
-      margin: 14px 0 26px;
-      opacity: 0.9;
-    }
-
-    .contact-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .contact-links a {
-      background: rgba(255,255,255,0.16);
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-    }
-
-    footer {
-      padding: 34px 0;
-      color: var(--muted);
-      text-align: center;
-      font-size: 14px;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .about-grid,
-      .projects,
-      .skills-grid,
-      .experience {
-        grid-template-columns: 1fr;
-      }
-
-      .stats {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">Cristina Stefanache</div>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-row">
+    <div class="monogram">CS</div>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="nav-cta" href="#contact">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow eyebrow">Portfolio</div>
+
+```
+<h1>Cristina Stefanache</h1>
+
+<div class="hero-roles">
+  DATA&nbsp;ANALYTICS <span>·</span> DIGITAL&nbsp;MARKETING <span>·</span> CLOUD&nbsp;FUNDAMENTALS
+</div>
+
+<p class="hero-statement">
+  I enjoy learning, solving problems, and making information easier to understand.
+  My background brings together data analytics, digital marketing, cloud fundamentals,
+  and real customer experience.
+</p>
+
+<div class="profile-photo">
+  <img src="zoom out2.jpg" alt="Cristina Stefanache professional profile photo">
+</div>
+
+<svg class="hero-trace" viewBox="0 0 680 90" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,70 L90,55 L180,62 L270,30 L360,40 L450,15 L540,24 L680,5"></path>
+  <circle cx="270" cy="30" r="3" style="animation-delay:1.6s"></circle>
+  <circle cx="450" cy="15" r="3" style="animation-delay:1.9s"></circle>
+  <circle cx="680" cy="5"  r="3" style="animation-delay:2.3s"></circle>
+</svg>
+```
+
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="wrap">
+    <div class="ticker-row">
+      <div class="ticker-item">
+        <div class="ticker-num" data-count="2" data-suffix="">0</div>
+        <div class="ticker-label">Higher Diplomas</div>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-num">1st</div>
+        <div class="ticker-label">Class Honours Degree</div>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-num">AWS</div>
+        <div class="ticker-label">Cloud Practitioner</div>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-num" data-count="10" data-suffix="+">0+</div>
+        <div class="ticker-label">Years Experience</div>
+      </div>
     </div>
-  </header>
+  </div>
+</div>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <span class="tag">Based in Dublin • Open to opportunities</span>
-            <h1>Hi, I’m Cristina.</h1>
-            <p>
-              I enjoy learning, solving problems, and making information easier to understand.
-              My background brings together data analytics, digital marketing, cloud fundamentals,
-              and real customer experience.
-            </p>
-            <div class="buttons">
-              <a class="btn btn-primary" href="#projects">View Projects</a>
-              <a class="btn" href="#contact">Contact Me</a>
-            </div>
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Selected Work</span>
+      <h2>Projects & Case Studies</h2>
+    </div>
+
+```
+<div class="filters" id="filters">
+  <div class="filter-underline" id="filterUnderline"></div>
+</div>
+
+<div class="grid" id="grid"></div>
+```
+
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-inner">
+    <blockquote>
+      "I like taking messy information and turning it into something clear, simple, and useful."
+    </blockquote>
+
+```
+<p class="about-bio">
+  I recently completed a Higher Diploma in Data Analytics for Business, and I also hold a
+  First Class Honours degree in Marketing, Digital Media & Cloud Computing. I enjoy working
+  with data, content, and digital tools, especially when the goal is to improve something,
+  organise information, or help people make better decisions.
+</p>
+
+<p class="about-bio">
+  My experience includes many years in customer operations at Lidl Ireland, where accuracy,
+  reliability, teamwork, and problem-solving are part of everyday work. I also previously worked
+  as an Assistant Manager at KFC, where I gained experience in team coordination, reporting,
+  documentation, inventory, and supplier management.
+</p>
+```
+
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Capabilities</span>
+      <h2>Tools & Methods</h2>
+    </div>
+
+```
+<div class="tools-table">
+  <div class="tools-row">
+    <div class="eyebrow">Data & Analytics</div>
+    <div>Python basics, SQL basics, Excel, Google Sheets, data cleaning, exploratory analysis, survey analysis, model evaluation.</div>
+  </div>
+
+  <div class="tools-row">
+    <div class="eyebrow">Digital & Content</div>
+    <div>Content accuracy, QA checks, proofreading, CMS-style tools, reporting, digital marketing fundamentals, consumer behaviour insight.</div>
+  </div>
+
+  <div class="tools-row">
+    <div class="eyebrow">Web & Technical</div>
+    <div>HTML, CSS, JavaScript, Bootstrap, GitHub, Jupyter Notebook, basic front-end development and project organisation.</div>
+  </div>
+
+  <div class="tools-row">
+    <div class="eyebrow">Cloud</div>
+    <div>AWS Cloud Practitioner fundamentals, cloud concepts, cloud services awareness, and understanding of modern digital systems.</div>
+  </div>
+
+  <div class="tools-row">
+    <div class="eyebrow">Professional</div>
+    <div>Communication, organisation, problem-solving, teamwork, cross-team collaboration, accuracy, and adapting quickly in fast-paced environments.</div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<section id="experience" class="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Background</span>
+      <h2>Experience</h2>
+    </div>
+
+```
+<div class="experience-grid">
+  <div class="experience-card">
+    <h3>Customer Assistant — Lidl Ireland</h3>
+    <div class="experience-date">2014 — Present</div>
+    <p>
+      Working in a fast-paced customer operations environment where accuracy, reliability,
+      teamwork, and product knowledge are important every day.
+    </p>
+    <ul>
+      <li>Customer support and communication</li>
+      <li>Accuracy in daily operations</li>
+      <li>Problem-solving under pressure</li>
+      <li>Supporting a positive customer experience</li>
+    </ul>
+  </div>
+
+  <div class="experience-card">
+    <h3>Assistant Manager — KFC</h3>
+    <div class="experience-date">2013 — 2014</div>
+    <p>
+      Supported daily operations, team coordination, reporting, documentation,
+      inventory tasks, and supplier communication.
+    </p>
+    <ul>
+      <li>Team coordination</li>
+      <li>Reporting and documentation</li>
+      <li>Inventory and supplier management</li>
+      <li>Daily operations support</li>
+    </ul>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's connect</h2>
+    <p>
+      Open to opportunities in data analytics, marketing analytics, digital content,
+      business support, cloud-aware roles, and related entry-level or graduate roles.
+    </p>
+
+```
+<div class="contact-links">
+  <a href="mailto:your.email@example.com">Email</a>
+  <a href="https://www.linkedin.com/in/mihaela-cristina-stefanache-8238222a3" target="_blank" rel="noopener">LinkedIn</a>
+  <a href="https://github.com/Cristina395" target="_blank" rel="noopener">GitHub</a>
+</div>
+```
+
+  </div>
+</section>
+
+<footer>
+  <div class="monogram">CS</div>
+  <p>&copy; 2026 CRISTINA STEFANACHE. BUILT WITH CARE.</p>
+</footer>
+
+<script>
+  const PROJECTS = [
+    {
+      category: "analytics",
+      title: "Predicting Customer Returns",
+      description: "A machine learning project focused on predicting customer return behaviour and turning model results into practical business insight.",
+      result: "Focus: data cleaning, feature engineering, model comparison and evaluation",
+      tools: "Python · pandas · scikit-learn · Random Forest · XGBoost",
+      repo: "https://sl1nk.com/8wfh693",
+      demo: "https://sl1nk.com/8wfh693"
+    },
+    {
+      category: "web",
+      title: "Responsive Website",
+      description: "A mobile-first responsive website built with clean structure, simple navigation and a user-friendly layout.",
+      result: "Focus: responsive design, Bootstrap layout and simple JavaScript interactivity",
+      tools: "HTML · CSS · JavaScript · Bootstrap · GitHub",
+      repo: "https://github.com/Cristina395/Prime-Properties",
+      demo: "https://github.com/Cristina395/Prime-Properties"
+    },
+    {
+      category: "marketing",
+      title: "Gen Z Digital Behaviour Research",
+      description: "An academic research project exploring digital attitudes and behaviour among Gen Z consumers.",
+      result: "Focus: survey analysis, digital behaviour patterns and marketing insight",
+      tools: "Research · Survey Analysis · Digital Marketing · Consumer Behaviour",
+      repo: "https://s1nk.com/1ps5g71",
+      demo: "https://s1nk.com/1ps5g71"
+    }
+  ];
+
+  const CATEGORY_META = {
+    analytics: { label: "Data Analytics", color: "var(--analytics)" },
+    marketing: { label: "Digital Marketing", color: "var(--marketing)" },
+    web: { label: "Web & Technology", color: "var(--web)" }
+  };
+
+  const grid = document.getElementById('grid');
+  const filtersEl = document.getElementById('filters');
+
+  function renderCards(){
+    grid.innerHTML = PROJECTS.map((p, i) => {
+      const meta = CATEGORY_META[p.category];
+      return `
+        <div class="card" data-category="${p.category}" style="opacity:0; transform:translateY(10px); transition-delay:${i*0.05}s">
+          <div class="card-tag">
+            <span class="card-dot" style="background:${meta.color}"></span>
+            <span class="card-cat" style="color:${meta.color}">${meta.label}</span>
           </div>
-
-          <div class="photo-card">
-            <img src="zoom out2.jpg" alt="Cristina Stefanache professional profile photo">
+          <h3>${p.title}</h3>
+          <p>${p.description}</p>
+          <div class="card-result">${p.result}</div>
+          <div class="card-tools">${p.tools}</div>
+          <div class="card-links">
+            <a href="${p.repo}" target="_blank" rel="noopener">View project →</a>
+            <a href="${p.demo}" target="_blank" rel="noopener">View case study →</a>
           </div>
-        </div>
+        </div>`;
+    }).join('');
 
-        <div class="stats">
-          <div class="stat">
-            <strong>2</strong>
-            <span>Higher Diplomas</span>
-          </div>
-          <div class="stat">
-            <strong>1st</strong>
-            <span>Class Honours in Marketing</span>
-          </div>
-          <div class="stat">
-            <strong>AWS</strong>
-            <span>Cloud Practitioner</span>
-          </div>
-          <div class="stat">
-            <strong>10+</strong>
-            <span>Years Customer Experience</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.card').forEach(c => {
+        c.style.opacity = '1';
+        c.style.transform = 'translateY(0)';
+      });
+    });
+  }
 
-    <section id="about">
-      <div class="container">
-        <div class="section-title">
-          <span>About Me</span>
-          <h2>A practical mix of data, marketing, cloud, and customer understanding.</h2>
-          <p>
-            I like turning messy information into something clear, simple, and useful.
-          </p>
-        </div>
+  function renderFilters(){
+    const cats = ["all", ...Object.keys(CATEGORY_META)];
+    filtersEl.innerHTML = cats.map(c => {
+      const label = c === "all" ? "All Work" : CATEGORY_META[c].label;
+      return `<button class="filter-btn${c==='all' ? ' active' : ''}" data-filter="${c}">${label}</button>`;
+    }).join('') + `<div class="filter-underline" id="filterUnderline"></div>`;
 
-        <div class="about-grid">
-          <div class="panel">
-            <p>
-              I recently completed a Higher Diploma in Data Analytics for Business, and I hold a
-              First Class Honours degree in Marketing, Digital Media & Cloud Computing.
-            </p>
-            <p>
-              I enjoy working with data, content, and digital tools. I like improving things,
-              organising information, checking details, and helping people understand information
-              more clearly.
-            </p>
-            <p>
-              My experience at Lidl Ireland and previous Assistant Manager role at KFC helped me
-              build accuracy, reliability, communication, teamwork, and practical problem-solving
-              in real customer-facing environments.
-            </p>
-          </div>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        positionUnderline(btn);
+        applyFilter(btn.dataset.filter);
+      });
+    });
 
-          <div class="panel">
-            <div class="edu-item">
-              <strong>Higher Diploma</strong>
-              <span>Data Analytics for Business</span>
-            </div>
-            <div class="edu-item">
-              <strong>First Class Honours Degree</strong>
-              <span>Marketing, Digital Media & Cloud Computing</span>
-            </div>
-            <div class="edu-item">
-              <strong>AWS Cloud Practitioner</strong>
-              <span>Cloud fundamentals and digital systems awareness</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    requestAnimationFrame(() => {
+      positionUnderline(filtersEl.querySelector('.filter-btn.active'));
+    });
+  }
 
-    <section id="projects">
-      <div class="container">
-        <div class="section-title">
-          <span>Selected Work</span>
-          <h2>Projects that show how I think, learn, and solve problems.</h2>
-        </div>
+  function positionUnderline(btn){
+    const underlineEl = document.getElementById('filterUnderline');
+    if(!btn || !underlineEl) return;
+    const filterRect = filtersEl.getBoundingClientRect();
+    const btnRect = btn.getBoundingClientRect();
+    underlineEl.style.left = (btnRect.left - filterRect.left) + 'px';
+    underlineEl.style.width = btnRect.width + 'px';
+    const cat = btn.dataset.filter;
+    underlineEl.style.background = cat === 'all' ? 'var(--highlight)' : CATEGORY_META[cat].color;
+  }
 
-        <div class="projects">
-          <article class="project">
-            <span class="project-type ml">Machine Learning</span>
-            <h3>Predicting Customer Returns</h3>
-            <p>
-              A machine learning project focused on predicting customer return behaviour and
-              turning model results into practical business insight.
-            </p>
-            <ul>
-              <li>Built Logistic Regression, Random Forest, and XGBoost models</li>
-              <li>Worked on data cleaning and feature engineering</li>
-              <li>Compared performance using evaluation metrics</li>
-            </ul>
-            <div class="tools">Python · pandas · scikit-learn · XGBoost</div>
-            <a href="https://sl1nk.com/8wfh693" target="_blank">View Project →</a>
-          </article>
+  function applyFilter(cat){
+    document.querySelectorAll('.card').forEach(card => {
+      const show = cat === 'all' || card.dataset.category === cat;
+      card.classList.toggle('hide', !show);
+    });
+  }
 
-          <article class="project">
-            <span class="project-type web">Web Development</span>
-            <h3>Responsive Website</h3>
-            <p>
-              A mobile-first responsive website built with clean structure, simple navigation,
-              and a user-friendly layout.
-            </p>
-            <ul>
-              <li>Created a responsive website layout</li>
-              <li>Used Bootstrap for structure and styling</li>
-              <li>Added JavaScript for simple interactivity</li>
-            </ul>
-            <div class="tools">HTML · CSS · JavaScript · Bootstrap · GitHub</div>
-            <a href="https://github.com/Cristina395/Prime-Properties" target="_blank">View Repository →</a>
-          </article>
+  renderCards();
+  renderFilters();
 
-          <article class="project">
-            <span class="project-type marketing">Marketing Insights</span>
-            <h3>Gen Z Digital Behaviour Research</h3>
-            <p>
-              Academic research exploring digital attitudes and behaviour among Gen Z consumers.
-            </p>
-            <ul>
-              <li>Analysed survey data and digital behaviour patterns</li>
-              <li>Connected findings with marketing insight</li>
-              <li>Presented results in a clear and structured way</li>
-            </ul>
-            <div class="tools">Survey analysis · Digital marketing · Consumer behaviour</div>
-            <a href="https://s1nk.com/1ps5g71" target="_blank">View Project →</a>
-          </article>
-        </div>
-      </div>
-    </section>
+  window.addEventListener('resize', () => {
+    const active = document.querySelector('.filter-btn.active');
+    positionUnderline(active);
+  });
 
-    <section id="skills">
-      <div class="container">
-        <div class="section-title">
-          <span>Skills</span>
-          <h2>Tools and strengths I bring into my work.</h2>
-        </div>
+  const navEl = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    navEl.classList.toggle('scrolled', window.scrollY > 12);
+  });
 
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3>Content & Digital</h3>
-            <ul>
-              <li>Content accuracy</li>
-              <li>QA checks</li>
-              <li>Proofreading</li>
-              <li>CMS-style tools</li>
-              <li>Reporting</li>
-            </ul>
-          </div>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tickerNums = document.querySelectorAll('.ticker-num');
 
-          <div class="skill-card">
-            <h3>Technical</h3>
-            <ul>
-              <li>Python basics</li>
-              <li>SQL basics</li>
-              <li>Excel / Sheets</li>
-              <li>HTML, CSS, JavaScript</li>
-              <li>Bootstrap & GitHub</li>
-            </ul>
-          </div>
+  const tickerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting && entry.target.dataset.count){
+        animateCount(entry.target);
+        tickerObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
 
-          <div class="skill-card">
-            <h3>Data & Analytics</h3>
-            <ul>
-              <li>Data cleaning</li>
-              <li>Exploratory analysis</li>
-              <li>Basic machine learning</li>
-              <li>Model evaluation</li>
-              <li>Survey analysis</li>
-            </ul>
-          </div>
+  tickerNums.forEach(el => tickerObserver.observe(el));
 
-          <div class="skill-card">
-            <h3>Professional</h3>
-            <ul>
-              <li>Communication</li>
-              <li>Organisation</li>
-              <li>Problem-solving</li>
-              <li>Teamwork</li>
-              <li>Cross-team collaboration</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+  function animateCount(el){
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const decimals = el.dataset.decimal ? parseInt(el.dataset.decimal) : 0;
 
-    <section id="experience">
-      <div class="container">
-        <div class="section-title">
-          <span>Experience</span>
-          <h2>Real customer-facing experience with accuracy, teamwork, and responsibility.</h2>
-        </div>
+    if(reduceMotion){
+      el.textContent = target.toFixed(decimals) + suffix;
+      return;
+    }
 
-        <div class="experience">
-          <div class="experience-card">
-            <div class="date">2014 — Present</div>
-            <h3>Customer Assistant — Lidl Ireland</h3>
-            <p>
-              Working in a fast-paced customer operations environment where accuracy,
-              reliability, teamwork, and product knowledge are important every day.
-            </p>
-            <ul>
-              <li>Customer support and communication</li>
-              <li>Accuracy in daily operations</li>
-              <li>Problem-solving under pressure</li>
-              <li>Supporting a positive customer experience</li>
-            </ul>
-          </div>
+    const duration = 1400;
+    const start = performance.now();
 
-          <div class="experience-card">
-            <div class="date">2013 — 2014</div>
-            <h3>Assistant Manager — KFC</h3>
-            <p>
-              Supported daily operations, team coordination, reporting, documentation,
-              inventory tasks, and supplier communication.
-            </p>
-            <ul>
-              <li>Team coordination</li>
-              <li>Reporting and documentation</li>
-              <li>Inventory and supplier management</li>
-              <li>Daily operations support</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    function tick(now){
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const val = target * eased;
+      el.textContent = val.toFixed(decimals) + suffix;
+      if(progress < 1) requestAnimationFrame(tick);
+    }
 
-    <section id="contact">
-      <div class="container">
-        <div class="contact-box">
-          <h2>Let’s connect</h2>
-          <p>
-            I am open to opportunities in data analytics, marketing analytics, digital content,
-            business support, cloud-aware roles, and related graduate or entry-level positions.
-          </p>
+    requestAnimationFrame(tick);
+  }
+</script>
 
-          <div class="contact-links">
-            <a href="mailto:your.email@example.com">Email</a>
-            <a href="https://www.linkedin.com/in/mihaela-cristina-stefanache-8238222a3" target="_blank">LinkedIn</a>
-            <a href="https://github.com/Cristina395" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2026 Cristina Stefanache. Built with care.
-  </footer>
 </body>
 </html>
