@@ -1,10 +1,704 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Cristina Stefanache Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cristina Stefanache | Data, Marketing & Cloud Portfolio</title>
+  <meta name="description" content="Portfolio of Cristina Stefanache, Dublin-based professional in data analytics, digital marketing, cloud fundamentals and business insights.">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --light: #e2e8f0;
+      --blue: #2563eb;
+      --teal: #14b8a6;
+      --purple: #8b5cf6;
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      padding: 28px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(248, 250, 252, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--light);
+      z-index: 10;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid var(--light);
+      background: var(--card);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      border-color: var(--blue);
+    }
+
+    .photo-card {
+      background: linear-gradient(135deg, #dbeafe, #f3e8ff);
+      padding: 14px;
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-card img {
+      width: 100%;
+      display: block;
+      border-radius: 24px;
+      object-fit: cover;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 50px;
+    }
+
+    .stat {
+      background: var(--card);
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--light);
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      font-size: 28px;
+      color: var(--blue);
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      max-width: 720px;
+      margin-bottom: 38px;
+    }
+
+    .section-title span {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-top: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin-top: 16px;
+      font-size: 17px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 26px;
+    }
+
+    .panel {
+      background: var(--card);
+      padding: 34px;
+      border-radius: var(--radius);
+      border: 1px solid var(--light);
+      box-shadow: var(--shadow);
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .edu-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--light);
+    }
+
+    .edu-item:last-child {
+      border-bottom: none;
+    }
+
+    .edu-item strong {
+      display: block;
+      color: var(--text);
+    }
+
+    .edu-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      background: var(--card);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12);
+    }
+
+    .project-type {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .ml { background: #ede9fe; color: var(--purple); }
+    .web { background: #ccfbf1; color: #0f766e; }
+    .marketing { background: #dbeafe; color: var(--blue); }
+
+    .project h3 {
+      font-size: 24px;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .project p, .project li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .project ul {
+      margin: 16px 0 18px 18px;
+    }
+
+    .tools {
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--light);
+      padding-top: 16px;
+      margin-top: 18px;
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 18px;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card h3 {
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    .skill-card ul {
+      list-style: none;
+    }
+
+    .skill-card li {
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .experience-card {
+      background: var(--card);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .date {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .experience-card p, .experience-card li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .experience-card ul {
+      margin: 16px 0 0 18px;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      color: white;
+      padding: 48px;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box p {
+      max-width: 720px;
+      margin: 14px 0 26px;
+      opacity: 0.9;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      background: rgba(255,255,255,0.16);
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 34px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .projects,
+      .skills-grid,
+      .experience {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Hello, I'm Cristina Stefanache</h1>
-    <p>My portfolio is coming soon.</p>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Cristina Stefanache</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <span class="tag">Based in Dublin • Open to opportunities</span>
+            <h1>Hi, I’m Cristina.</h1>
+            <p>
+              I enjoy learning, solving problems, and making information easier to understand.
+              My background brings together data analytics, digital marketing, cloud fundamentals,
+              and real customer experience.
+            </p>
+            <div class="buttons">
+              <a class="btn btn-primary" href="#projects">View Projects</a>
+              <a class="btn" href="#contact">Contact Me</a>
+            </div>
+          </div>
+
+          <div class="photo-card">
+            <img src="zoom out2.jpg" alt="Cristina Stefanache professional profile photo">
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>2</strong>
+            <span>Higher Diplomas</span>
+          </div>
+          <div class="stat">
+            <strong>1st</strong>
+            <span>Class Honours in Marketing</span>
+          </div>
+          <div class="stat">
+            <strong>AWS</strong>
+            <span>Cloud Practitioner</span>
+          </div>
+          <div class="stat">
+            <strong>10+</strong>
+            <span>Years Customer Experience</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <span>About Me</span>
+          <h2>A practical mix of data, marketing, cloud, and customer understanding.</h2>
+          <p>
+            I like turning messy information into something clear, simple, and useful.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel">
+            <p>
+              I recently completed a Higher Diploma in Data Analytics for Business, and I hold a
+              First Class Honours degree in Marketing, Digital Media & Cloud Computing.
+            </p>
+            <p>
+              I enjoy working with data, content, and digital tools. I like improving things,
+              organising information, checking details, and helping people understand information
+              more clearly.
+            </p>
+            <p>
+              My experience at Lidl Ireland and previous Assistant Manager role at KFC helped me
+              build accuracy, reliability, communication, teamwork, and practical problem-solving
+              in real customer-facing environments.
+            </p>
+          </div>
+
+          <div class="panel">
+            <div class="edu-item">
+              <strong>Higher Diploma</strong>
+              <span>Data Analytics for Business</span>
+            </div>
+            <div class="edu-item">
+              <strong>First Class Honours Degree</strong>
+              <span>Marketing, Digital Media & Cloud Computing</span>
+            </div>
+            <div class="edu-item">
+              <strong>AWS Cloud Practitioner</strong>
+              <span>Cloud fundamentals and digital systems awareness</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-title">
+          <span>Selected Work</span>
+          <h2>Projects that show how I think, learn, and solve problems.</h2>
+        </div>
+
+        <div class="projects">
+          <article class="project">
+            <span class="project-type ml">Machine Learning</span>
+            <h3>Predicting Customer Returns</h3>
+            <p>
+              A machine learning project focused on predicting customer return behaviour and
+              turning model results into practical business insight.
+            </p>
+            <ul>
+              <li>Built Logistic Regression, Random Forest, and XGBoost models</li>
+              <li>Worked on data cleaning and feature engineering</li>
+              <li>Compared performance using evaluation metrics</li>
+            </ul>
+            <div class="tools">Python · pandas · scikit-learn · XGBoost</div>
+            <a href="https://sl1nk.com/8wfh693" target="_blank">View Project →</a>
+          </article>
+
+          <article class="project">
+            <span class="project-type web">Web Development</span>
+            <h3>Responsive Website</h3>
+            <p>
+              A mobile-first responsive website built with clean structure, simple navigation,
+              and a user-friendly layout.
+            </p>
+            <ul>
+              <li>Created a responsive website layout</li>
+              <li>Used Bootstrap for structure and styling</li>
+              <li>Added JavaScript for simple interactivity</li>
+            </ul>
+            <div class="tools">HTML · CSS · JavaScript · Bootstrap · GitHub</div>
+            <a href="https://github.com/Cristina395/Prime-Properties" target="_blank">View Repository →</a>
+          </article>
+
+          <article class="project">
+            <span class="project-type marketing">Marketing Insights</span>
+            <h3>Gen Z Digital Behaviour Research</h3>
+            <p>
+              Academic research exploring digital attitudes and behaviour among Gen Z consumers.
+            </p>
+            <ul>
+              <li>Analysed survey data and digital behaviour patterns</li>
+              <li>Connected findings with marketing insight</li>
+              <li>Presented results in a clear and structured way</li>
+            </ul>
+            <div class="tools">Survey analysis · Digital marketing · Consumer behaviour</div>
+            <a href="https://s1nk.com/1ps5g71" target="_blank">View Project →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-title">
+          <span>Skills</span>
+          <h2>Tools and strengths I bring into my work.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Content & Digital</h3>
+            <ul>
+              <li>Content accuracy</li>
+              <li>QA checks</li>
+              <li>Proofreading</li>
+              <li>CMS-style tools</li>
+              <li>Reporting</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>Technical</h3>
+            <ul>
+              <li>Python basics</li>
+              <li>SQL basics</li>
+              <li>Excel / Sheets</li>
+              <li>HTML, CSS, JavaScript</li>
+              <li>Bootstrap & GitHub</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>Data & Analytics</h3>
+            <ul>
+              <li>Data cleaning</li>
+              <li>Exploratory analysis</li>
+              <li>Basic machine learning</li>
+              <li>Model evaluation</li>
+              <li>Survey analysis</li>
+            </ul>
+          </div>
+
+          <div class="skill-card">
+            <h3>Professional</h3>
+            <ul>
+              <li>Communication</li>
+              <li>Organisation</li>
+              <li>Problem-solving</li>
+              <li>Teamwork</li>
+              <li>Cross-team collaboration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-title">
+          <span>Experience</span>
+          <h2>Real customer-facing experience with accuracy, teamwork, and responsibility.</h2>
+        </div>
+
+        <div class="experience">
+          <div class="experience-card">
+            <div class="date">2014 — Present</div>
+            <h3>Customer Assistant — Lidl Ireland</h3>
+            <p>
+              Working in a fast-paced customer operations environment where accuracy,
+              reliability, teamwork, and product knowledge are important every day.
+            </p>
+            <ul>
+              <li>Customer support and communication</li>
+              <li>Accuracy in daily operations</li>
+              <li>Problem-solving under pressure</li>
+              <li>Supporting a positive customer experience</li>
+            </ul>
+          </div>
+
+          <div class="experience-card">
+            <div class="date">2013 — 2014</div>
+            <h3>Assistant Manager — KFC</h3>
+            <p>
+              Supported daily operations, team coordination, reporting, documentation,
+              inventory tasks, and supplier communication.
+            </p>
+            <ul>
+              <li>Team coordination</li>
+              <li>Reporting and documentation</li>
+              <li>Inventory and supplier management</li>
+              <li>Daily operations support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Let’s connect</h2>
+          <p>
+            I am open to opportunities in data analytics, marketing analytics, digital content,
+            business support, cloud-aware roles, and related graduate or entry-level positions.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:your.email@example.com">Email</a>
+            <a href="https://www.linkedin.com/in/mihaela-cristina-stefanache-8238222a3" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Cristina395" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Cristina Stefanache. Built with care.
+  </footer>
 </body>
 </html>
