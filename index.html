@@ -1,10 +1,10 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cristina Stefanache | Portfolio</title>
+<title>Cristina Stefanache | Data Analytics Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,15 +52,16 @@ nav{position:sticky;top:0;z-index:99;background:rgba(15,23,42,.92);backdrop-filt
 .btn-primary{background:var(--teal);color:#06121f;border-color:var(--teal)}
 .btn:hover{transform:translateY(-3px);border-color:var(--teal)}
 
-section{padding:88px 0;border-top:1px solid var(--line)}
+section{padding:100px 0;border-top:1px solid var(--line)}
 .section-head{text-align:center;margin-bottom:48px}
 .section-head h2{font-family:var(--serif);font-size:clamp(38px,5vw,56px);margin-top:10px}
 .section-head p{max-width:760px;margin:14px auto 0;color:var(--muted)}
 
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
 .card{background:var(--panel);border:1px solid var(--line);padding:30px;border-radius:22px;transition:.3s}
 .card:hover{background:var(--panel2);transform:translateY(-5px)}
 .card p{color:var(--muted);margin-bottom:14px}
+
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
 @media(max-width:850px){.about-grid{grid-template-columns:1fr}}
 
 .tools-table{max-width:980px;margin:auto;border-top:1px solid var(--line)}
@@ -69,35 +70,16 @@ section{padding:88px 0;border-top:1px solid var(--line)}
 .tool-row p{color:var(--muted)}
 @media(max-width:700px){.tool-row{grid-template-columns:1fr;gap:8px}}
 
-.education-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
-.edu{border-bottom:1px solid var(--line);padding:16px 0}
+.edu{border-bottom:1px solid var(--line);padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:24px}
 .edu:last-child{border-bottom:0}
 .edu strong{display:block;color:var(--text)}
 .edu span{color:var(--faint);font-size:14px}
-.diploma-stack{display:grid;gap:18px}
-.diploma-img{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:12px;transition:.3s}
-.diploma-img:hover{transform:translateY(-4px);border-color:var(--teal)}
-.diploma-img img{border-radius:14px}
-.diploma-img p{font-size:13px;color:var(--muted);margin-top:8px;text-align:center}
-@media(max-width:900px){.education-grid{grid-template-columns:1fr}}
-
-.project-feature{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:30px;margin-bottom:34px;overflow:hidden;transition:.3s}
-.project-feature:hover{background:var(--panel2);transform:translateY(-4px)}
-.project-feature h3{font-family:var(--serif);font-size:38px;line-height:1.1;margin:10px 0 14px}
-.project-feature p{color:var(--muted);max-width:900px}
-.label{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;margin-bottom:10px}
-.ml{color:var(--blue)}.dash{color:var(--teal)}.mkt{color:var(--purple)}.web{color:var(--copper)}.cloud{color:var(--green)}
-
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
-.gallery img{width:100%;height:190px;object-fit:cover;border-radius:16px;border:1px solid var(--line);transition:.3s}
-.gallery img:hover{transform:scale(1.03);border-color:var(--teal)}
-@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.gallery{grid-template-columns:1fr}.gallery img{height:auto}}
-
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
-.tags span{font-size:12px;color:var(--faint);border:1px solid var(--line);padding:5px 9px;border-radius:999px}
-.links{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
-.links a{font-size:13px;font-weight:800;color:var(--teal);border-bottom:1px solid var(--teal)}
+.edu-thumb{width:118px;min-width:118px;border-radius:12px;border:1px solid var(--line);transition:.25s}
+.edu-thumb:hover{transform:scale(1.04);border-color:var(--teal)}
+@media(max-width:650px){
+  .edu{align-items:flex-start;flex-direction:column}
+  .edu-thumb{width:150px}
+}
 
 .report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .report-card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px;transition:.3s}
@@ -105,6 +87,34 @@ section{padding:88px 0;border-top:1px solid var(--line)}
 .report-card h3{font-family:var(--serif);font-size:28px;line-height:1.15;margin:12px 0}
 .report-card p{color:var(--muted);font-size:15px}
 @media(max-width:900px){.report-grid{grid-template-columns:1fr}}
+
+.project-feature{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:30px;margin-bottom:34px;overflow:hidden;transition:.3s}
+.project-feature:hover{background:var(--panel2);transform:translateY(-4px)}
+.project-feature h3{font-family:var(--serif);font-size:38px;line-height:1.1;margin:10px 0 14px}
+.project-feature p{color:var(--muted);max-width:900px}
+
+.label{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;margin-bottom:10px}
+.ml{color:var(--blue)}.dash{color:var(--teal)}.mkt{color:var(--purple)}.web{color:var(--copper)}.cloud{color:var(--green)}
+
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.tags span{font-size:12px;color:var(--faint);border:1px solid var(--line);padding:5px 9px;border-radius:999px}
+.links{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
+.links a{font-size:13px;font-weight:800;color:var(--teal);border-bottom:1px solid var(--teal)}
+
+.carousel{position:relative;margin-top:24px;border-radius:20px;border:1px solid var(--line);overflow:hidden;background:#081226}
+.carousel-track{display:flex;transition:transform .45s ease}
+.carousel-slide{min-width:100%;background:#081226}
+.carousel-slide img{width:100%;height:430px;object-fit:contain;background:#081226}
+.carousel-controls{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-top:1px solid var(--line);background:rgba(17,28,51,.95)}
+.carousel-btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);width:42px;height:42px;border-radius:50%;font-size:24px;cursor:pointer;transition:.2s}
+.carousel-btn:hover{border-color:var(--teal);color:var(--teal)}
+.carousel-count{font-size:13px;color:var(--faint)}
+@media(max-width:700px){.carousel-slide img{height:280px}}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.gallery img{width:100%;height:240px;object-fit:cover;border-radius:16px;border:1px solid var(--line);transition:.3s}
+.gallery img:hover{transform:scale(1.03);border-color:var(--teal)}
+@media(max-width:900px){.gallery{grid-template-columns:1fr}.gallery img{height:auto}}
 
 .contact{text-align:center}
 .contact p{color:var(--muted);max-width:760px;margin:0 auto 28px}
@@ -124,8 +134,8 @@ footer{text-align:center;padding:36px 0;color:var(--faint);border-top:1px solid 
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
       <a href="#reports">Reports</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -139,8 +149,8 @@ footer{text-align:center;padding:36px 0;color:var(--faint);border-top:1px solid 
     Building practical solutions through data, technology and business insight.
   </p>
   <div class="hero-actions">
-    <a class="btn btn-primary" href="#projects">Explore My Work</a>
-    <a class="btn" href="#contact">Contact Me</a>
+    <a class="btn btn-primary" href="#reports">View Business Projects</a>
+    <a class="btn" href="#projects">Explore Technical Work</a>
   </div>
 </header>
 
@@ -192,124 +202,50 @@ footer{text-align:center;padding:36px 0;color:var(--faint);border-top:1px solid 
       <h2>Academic and Professional Background</h2>
     </div>
 
-    <div class="education-grid">
-      <div class="card reveal">
-        <div class="edu"><strong>Higher Diploma in Computer Science</strong><span>Data Analytics for Business — CCT College Dublin, May 2026</span></div>
-        <div class="edu"><strong>First Class Honours Degree</strong><span>Marketing, Digital Media & Cloud Computing — Dublin Business School, May 2025</span></div>
-        <div class="edu"><strong>AWS Certified Cloud Practitioner</strong><span>Issued May 2025</span></div>
-        <div class="edu"><strong>Cybersecurity Fundamentals</strong><span>Currently enrolled — CCT College Dublin</span></div>
+    <div class="card reveal">
+      <div class="edu">
+        <div>
+          <strong>Higher Diploma in Computer Science</strong>
+          <span>Data Analytics for Business — CCT College Dublin, May 2026</span>
+        </div>
       </div>
 
-      <div class="diploma-stack reveal">
-        <a class="diploma-img" href="assets/Marketing Diploma.png" target="_blank">
-          <img src="assets/Marketing Diploma.png" alt="Marketing Diploma">
-          <p>Marketing, Digital Media & Cloud Computing</p>
+      <div class="edu">
+        <div>
+          <strong>First Class Honours Degree</strong>
+          <span>Marketing, Digital Media & Cloud Computing — Dublin Business School, May 2025</span>
+        </div>
+        <a href="assets/Marketing Diploma.png" target="_blank">
+          <img class="edu-thumb" src="assets/Marketing Diploma.png" alt="Marketing Diploma">
         </a>
-        <a class="diploma-img" href="assets/AWS Cloud Practitioner Diploma.png" target="_blank">
-          <img src="assets/AWS Cloud Practitioner Diploma.png" alt="AWS Cloud Practitioner Diploma">
-          <p>AWS Cloud Practitioner</p>
+      </div>
+
+      <div class="edu">
+        <div>
+          <strong>AWS Certified Cloud Practitioner</strong>
+          <span>Issued May 2025</span>
+        </div>
+        <a href="assets/AWS Cloud Practitioner Diploma.png" target="_blank">
+          <img class="edu-thumb" src="assets/AWS Cloud Practitioner Diploma.png" alt="AWS Cloud Practitioner Diploma">
         </a>
+      </div>
+
+      <div class="edu">
+        <div>
+          <strong>Cybersecurity Fundamentals</strong>
+          <span>Currently enrolled — CCT College Dublin</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2>Projects & Case Studies</h2>
-      <p>These projects show my ability to analyse data, build models, create dashboards, research markets and present business recommendations.</p>
-    </div>
-
-    <article class="project-feature reveal">
-      <div class="label ml">Machine Learning</div>
-      <h3>Predicting Product Returns in Online Retail</h3>
-      <p>Built an end-to-end machine learning solution using Logistic Regression, Random Forest and XGBoost to predict product returns using the UCI Online Retail dataset. The project includes data preparation, feature engineering, model evaluation, optimisation, explainable AI and business recommendations.</p>
-      <div class="tags"><span>Python</span><span>Random Forest</span><span>XGBoost</span><span>SMOTE</span><span>LIME</span><span>ROC-AUC</span></div>
-      <div class="gallery">
-        <img src="assets/Capstone Project .png" alt="">
-        <img src="assets/Capstone-Business Context and Hypothesis.png" alt="">
-        <img src="assets/Capstone-Data Preparation and Feature Engineering.png" alt="">
-        <img src="assets/Model Evaluation.png" alt="">
-        <img src="assets/Capstone-Optimisation, validation and Model comparison.png" alt="">
-        <img src="assets/Capstone-Model Interpretability.png" alt="">
-        <img src="assets/Capstone-Results and Recommendations.png" alt="">
-      </div>
-      <div class="links">
-        <a href="https://github.com/CCT-Dublin/ca-1-capstone-project-proposal-20-Cristina395" target="_blank">View Repository →</a>
-      </div>
-    </article>
-
-    <article class="project-feature reveal">
-      <div class="label dash">Interactive Dashboard</div>
-      <h3>Smart Retail Analytics Dashboard</h3>
-      <p>Created an interactive Plotly Dash dashboard to analyse Superstore sales, product categories, recommendations and retail insights. The dashboard includes interactive views, filters and visual outputs designed to support business decision-making.</p>
-      <div class="tags"><span>Plotly Dash</span><span>Pandas</span><span>Business Intelligence</span><span>Data Visualisation</span><span>Interactive Filtering</span></div>
-      <div class="gallery">
-        <img src="assets/Title, subtitle, radio buttons Dashboard.png" alt="">
-        <img src="assets/Interactive Dashboard Data.png" alt="">
-        <img src="assets/Dashboard interactive products.png" alt="">
-      </div>
-      <div class="links">
-        <a href="https://github.com/CCT-Dublin/integrated-ca2-50-Cristina395" target="_blank">View Dashboard Project →</a>
-      </div>
-    </article>
-
-    <article class="project-feature reveal">
-      <div class="label ml">Machine Learning & Recommendation Systems</div>
-      <h3>Retail Recommendation Engine & Market Basket Analytics</h3>
-      <p>Developed recommendation models using collaborative filtering, content-based filtering and association rule mining. The project includes user-item matrices, Pearson correlation analysis, Apriori, FP-Growth and product recommendation outputs.</p>
-      <div class="tags"><span>Recommendation Systems</span><span>Collaborative Filtering</span><span>Content-Based Filtering</span><span>Apriori</span><span>FP-Growth</span></div>
-      <div class="gallery">
-        <img src="assets/User-ser collaborative filtering.png" alt="">
-        <img src="assets/Content-based recommandations.png" alt="">
-        <img src="assets/Sub-category User-item Matrix.png" alt="">
-        <img src="assets/Pearson Correlation Matrix.png" alt="">
-        <img src="assets/Apriori and FP-Growth.png" alt="">
-      </div>
-      <div class="links">
-        <a href="https://github.com/CCT-Dublin/integrated-ca2-50-Cristina395" target="_blank">View Project →</a>
-      </div>
-    </article>
-
-    <article class="project-feature reveal">
-      <div class="label ml">Machine Learning</div>
-      <h3>Clustering & Time Series Modelling</h3>
-      <p>Explored clustering evaluation and time series methods, including PCA, Elbow Method, Silhouette Score, Davies-Bouldin Index, ARIMA, SARIMA and AIC model comparison.</p>
-      <div class="tags"><span>Clustering</span><span>PCA</span><span>ARIMA</span><span>SARIMA</span><span>AIC</span></div>
-      <div class="gallery">
-        <img src="assets/ML Clustering Evaluation.png" alt="">
-        <img src="assets/ML Comparison of Silhouette Score Vs. Davies Bouldin Index.png" alt="">
-        <img src="assets/ML Elbow Method and PCA .png" alt="">
-        <img src="assets/ML Time Series Analysis.png" alt="">
-        <img src="assets/ML ARIMA Vs Sarima using AIC.png" alt="">
-      </div>
-    </article>
-
-    <article class="project-feature reveal">
-      <div class="label web">Web Development</div>
-      <h3>Prime Properties Website</h3>
-      <p>Designed and developed a responsive real estate website with property listings, search features, property pages and a contact/request form.</p>
-      <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>UI/UX</span></div>
-      <div class="gallery">
-        <img src="assets/Prime Property Home Page.png" alt="">
-        <img src="assets/Prime Property Search Bar and Properties.png" alt="">
-        <img src="assets/Prime Property Contact Page.png" alt="">
-      </div>
-      <div class="links">
-        <a href="https://github.com/Cristina395/Prime-Properties" target="_blank">View Repository →</a>
-      </div>
-    </article>
-
   </div>
 </section>
 
 <section id="reports">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Marketing & Research</span>
-      <h2>Reports & Business Case Studies</h2>
-      <p>These reports show my research, marketing strategy, consumer behaviour and cloud marketing knowledge.</p>
+      <span class="eyebrow">Business Research & Marketing Strategy</span>
+      <h2>Research Reports & Business Case Studies</h2>
+      <p>These reports show my research, marketing strategy, consumer behaviour, cloud marketing and business analysis knowledge.</p>
     </div>
 
     <div class="report-grid">
@@ -334,6 +270,124 @@ footer{text-align:center;padding:36px 0;color:var(--faint);border-top:1px solid 
         <div class="links"><a href="reports/Cloud Solutions Proposal -Marketing-Butler House, Kilkenny.pdf" target="_blank">Read Report →</a></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Projects & Case Studies</h2>
+      <p>These projects show my ability to analyse data, build models, create dashboards and turn technical work into useful business insight.</p>
+    </div>
+
+    <article class="project-feature reveal">
+      <div class="label ml">Machine Learning</div>
+      <h3>Predicting Product Returns in Online Retail</h3>
+      <p>Built an end-to-end machine learning solution using Logistic Regression, Random Forest and XGBoost to predict product returns using the UCI Online Retail dataset. The project includes data preparation, feature engineering, model evaluation, optimisation, explainable AI and business recommendations.</p>
+      <div class="tags"><span>Python</span><span>Random Forest</span><span>XGBoost</span><span>SMOTE</span><span>LIME</span><span>ROC-AUC</span></div>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/Capstone Project .png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Capstone-Business Context and Hypothesis.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Capstone-Data Preparation and Feature Engineering.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Model Evaluation.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Capstone-Optimisation, validation and Model comparison.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Capstone-Model Interpretability.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Capstone-Results and Recommendations.png" alt=""></div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" data-prev>‹</button>
+          <span class="carousel-count">1 / 7</span>
+          <button class="carousel-btn" data-next>›</button>
+        </div>
+      </div>
+      <div class="links">
+        <a href="https://github.com/CCT-Dublin/ca-1-capstone-project-proposal-20-Cristina395" target="_blank">View Repository →</a>
+      </div>
+    </article>
+
+    <article class="project-feature reveal">
+      <div class="label dash">Interactive Dashboard</div>
+      <h3>Smart Retail Analytics Dashboard</h3>
+      <p>Created an interactive Plotly Dash dashboard to analyse Superstore sales, product categories, recommendations and retail insights. The dashboard includes interactive views, filters and visual outputs designed to support business decision-making.</p>
+      <div class="tags"><span>Plotly Dash</span><span>Pandas</span><span>Business Intelligence</span><span>Data Visualisation</span><span>Interactive Filtering</span></div>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/Title, subtitle, radio buttons Dashboard.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Interactive Dashboard Data.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Dashboard interactive products.png" alt=""></div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" data-prev>‹</button>
+          <span class="carousel-count">1 / 3</span>
+          <button class="carousel-btn" data-next>›</button>
+        </div>
+      </div>
+      <div class="links">
+        <a href="https://github.com/CCT-Dublin/integrated-ca2-50-Cristina395" target="_blank">View Dashboard Project →</a>
+      </div>
+    </article>
+
+    <article class="project-feature reveal">
+      <div class="label ml">Machine Learning & Recommendation Systems</div>
+      <h3>Retail Recommendation Engine & Market Basket Analytics</h3>
+      <p>Developed recommendation models using collaborative filtering, content-based filtering and association rule mining. The project includes user-item matrices, Pearson correlation analysis, Apriori, FP-Growth and product recommendation outputs.</p>
+      <div class="tags"><span>Recommendation Systems</span><span>Collaborative Filtering</span><span>Content-Based Filtering</span><span>Apriori</span><span>FP-Growth</span></div>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/User-ser collaborative filtering.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Content-based recommandations.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Sub-category User-item Matrix.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Pearson Correlation Matrix.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/Apriori and FP-Growth.png" alt=""></div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" data-prev>‹</button>
+          <span class="carousel-count">1 / 5</span>
+          <button class="carousel-btn" data-next>›</button>
+        </div>
+      </div>
+      <div class="links">
+        <a href="https://github.com/CCT-Dublin/integrated-ca2-50-Cristina395" target="_blank">View Project →</a>
+      </div>
+    </article>
+
+    <article class="project-feature reveal">
+      <div class="label ml">Machine Learning</div>
+      <h3>Clustering & Time Series Modelling</h3>
+      <p>Explored clustering evaluation and time series methods, including PCA, Elbow Method, Silhouette Score, Davies-Bouldin Index, ARIMA, SARIMA and AIC model comparison.</p>
+      <div class="tags"><span>Clustering</span><span>PCA</span><span>ARIMA</span><span>SARIMA</span><span>AIC</span></div>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="assets/ML Clustering Evaluation.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/ML Comparison of Silhouette Score Vs. Davies Bouldin Index.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/ML Elbow Method and PCA .png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/ML Time Series Analysis.png" alt=""></div>
+          <div class="carousel-slide"><img src="assets/ML ARIMA Vs Sarima using AIC.png" alt=""></div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" data-prev>‹</button>
+          <span class="carousel-count">1 / 5</span>
+          <button class="carousel-btn" data-next>›</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-feature reveal">
+      <div class="label web">Web Development</div>
+      <h3>Prime Properties Website</h3>
+      <p>Designed and developed a responsive real estate website with property listings, search features, property pages and a contact/request form.</p>
+      <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>UI/UX</span></div>
+      <div class="gallery">
+        <img src="assets/Prime Property Home Page.png" alt="">
+        <img src="assets/Prime Property Search Bar and Properties.png" alt="">
+        <img src="assets/Prime Property Contact Page.png" alt="">
+      </div>
+      <div class="links">
+        <a href="https://github.com/Cristina395/Prime-Properties" target="_blank">View Repository →</a>
+      </div>
+    </article>
+
   </div>
 </section>
 
@@ -367,6 +421,30 @@ const observer=new IntersectionObserver(entries=>{
   });
 },{threshold:.12});
 reveals.forEach(el=>observer.observe(el));
+
+document.querySelectorAll('[data-carousel]').forEach(carousel=>{
+  const track=carousel.querySelector('.carousel-track');
+  const slides=carousel.querySelectorAll('.carousel-slide');
+  const prev=carousel.querySelector('[data-prev]');
+  const next=carousel.querySelector('[data-next]');
+  const count=carousel.querySelector('.carousel-count');
+  let index=0;
+
+  function update(){
+    track.style.transform=`translateX(-${index*100}%)`;
+    count.textContent=`${index+1} / ${slides.length}`;
+  }
+
+  prev.addEventListener('click',()=>{
+    index=index===0?slides.length-1:index-1;
+    update();
+  });
+
+  next.addEventListener('click',()=>{
+    index=index===slides.length-1?0:index+1;
+    update();
+  });
+});
 </script>
 
 </body>
